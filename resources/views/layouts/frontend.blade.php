@@ -74,7 +74,7 @@
                         <a href="{{route('frontend.tracking')}}" class=" d-none d-sm-inline-block txt-primary me-4"><i class="fa-solid fa-location-crosshairs parcel_tarck_icon"></i>
                             Track Parcel </a>
                         <div class="d-flex align-items-center gap-3">
-                            <a href="{{route('frontend.login')}}" class="btn btn-primary">Login</a>
+                            <a href="{{route('login')}}" class="btn btn-primary">Login</a>
                         </div>
                         {{-- <button class="btn-outline btn-md d-none d-sm-inline-block">EN</button> --}}
 

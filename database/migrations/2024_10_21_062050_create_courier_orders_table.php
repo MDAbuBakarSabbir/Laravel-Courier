@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('marchant_id');
             $table->string('customer_name');
             $table->string('customer_number');
-            $table->string('customer_alt_number');
+            $table->string('customer_alt_number')->nullable();
             $table->string('customer_district');
             $table->string('customer_thana');
             $table->string('customer_address');

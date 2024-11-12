@@ -193,7 +193,7 @@ Fastest Courier in Dhaka
           <h2>We <mark>Deliver</mark> <br> Parcel within
            8 Hours</h2>
           <p>Easy Tracking, Instant Payment, and safe Delivery.</p>
-          <a href="{{route('frontend.register')}}"><button class="btn btn-lg">Become a Merchant</button></a>
+          <a href="{{route('register')}}"><button class="btn btn-lg">Become a Merchant</button></a>
         </div>
         <div class="intro-img">
           <img src="{{asset('frontend')}}/assets/images/rider.png" alt="">
@@ -394,7 +394,7 @@ Fastest Courier in Dhaka
     <div class="banner d-flex flex-column justify-content-center align-items-center gap-2">
       <h4>Grow Your Business with CityFast</h4>
       <p>Start Your first step with CityFast</p>
-      <a href="" class="btn btn-lg"> Become a Marchant</a>
+      <a href="{{route('register')}}" class="btn btn-lg"> Become a Marchant</a>
 
     </div>
     <div class="ellipseFade2">

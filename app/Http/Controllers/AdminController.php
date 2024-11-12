@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CourierOrder;
-use App\Http\Requests\StoreCourierOrderRequest;
-use App\Http\Requests\UpdateCourierOrderRequest;
+use App\Models\Admin;
+use App\Http\Requests\StoreAdminRequest;
+use App\Http\Requests\UpdateAdminRequest;
+use Illuminate\Support\Facades\Hash;
 
-class CourierOrderController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('marchantDashboard.orders.index');
+        return view('home');
     }
 
     /**
@@ -21,29 +22,33 @@ class CourierOrderController extends Controller
      */
     public function create()
     {
-        return view('marchantDashboard.orders.create');
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCourierOrderRequest $request)
+    public function store(StoreAdminRequest $request)
     {
-        //
+        return Admin::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(CourierOrder $courierOrder)
+    public function show(Admin $admin)
     {
-        return view('marchantDashboard.orders.show');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CourierOrder $courierOrder)
+    public function edit(Admin $admin)
     {
         //
     }
@@ -51,7 +56,7 @@ class CourierOrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCourierOrderRequest $request, CourierOrder $courierOrder)
+    public function update(UpdateAdminRequest $request, Admin $admin)
     {
         //
     }
@@ -59,7 +64,7 @@ class CourierOrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CourierOrder $courierOrder)
+    public function destroy(Admin $admin)
     {
         //
     }

@@ -32,7 +32,7 @@
                                 <i class="fa-solid fa-user"></i>
                             </div>
                     </div>
-                                        </div>
+                </div>
                 <div class="form-group  mb-3">
                     <div class="position-relative">
                         <input cols="1" rows="2" name="address" class="form-control "
