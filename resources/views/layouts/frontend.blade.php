@@ -40,7 +40,7 @@
                 <nav class="navbar">
                     <div class="d-flex gap-3 align-items-center">
                         <div class="mobile-nav-toggler">
-                            <img src="{{asset('frontend')}}/assets/images/fa_bar.svg" alt="">
+                            <i class="fa-solid fa-bars"></i>
                         </div>
                         <div class="brand-logo">
                             <a href="{{url('/')}}"><img src="{{asset('adminDash')}}/images/logo.png" alt="" class="web_logo" style="height: 70px"></a>
@@ -87,7 +87,7 @@
             <nav class="menu-box">
                 <div class="menubtn d-flex align-items-center justify-content-between">
                     <div class="logo">
-                        <a href="index.html"> <img src="{{asset('frontend')}}/assets/images/logo/logo.svg" class="img-fluid" /></a>
+                        <a href="index.html"> <img src="{{asset('adminDash')}}/images/logo.png" class="img-fluid" /></a>
                     </div>
                     <div class="close-btn ">
                         <img src="{{asset('frontend')}}/assets/images/close.png" alt="" class="img-fluid">
@@ -95,11 +95,7 @@
                 </div>
                 <div class="divider"></div>
                 <div class="menu-outer">
-                    <a href="tracking.html" class="tracking_tab"><img
-                            src="{{asset('frontend')}}/assets/images/parcel_tarck_icon.svg" alt="" class="w-auto me-2">
-                        Track
-                        Parcel
-                    </a>
+                    <a href="tracking.html" class="tracking_tab"><i class="fa-solid fa-location-crosshairs parcel_tarck_icon"></i>Track Parcel</a>
                     <div class="nav_link d-flex flex-column gap-2 mt-2">
 
                     </div>

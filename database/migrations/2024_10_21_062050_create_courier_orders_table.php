@@ -21,7 +21,12 @@ return new class extends Migration
             $table->string('customer_district');
             $table->string('customer_thana');
             $table->string('customer_address');
-            $table->string('status');
+            $table->string('actual_amount')->nullable();
+            $table->string('cod_amount')->nullable();
+            $table->string('invoice')->nullable();
+            $table->string('note')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

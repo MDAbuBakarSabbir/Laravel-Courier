@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CourierOrder extends Model
 {
-    //
+    protected $guarded = [''];
 }

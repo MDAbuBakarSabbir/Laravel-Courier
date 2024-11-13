@@ -1,8 +1,7 @@
 @extends('layouts.marchantDashLays')
 
 @section('dtl')
-<h3 class="welcome-sub-text">Business ID: {{Auth::user()->id}}</h3>
-<h3 class="welcome-sub-text">Your performance summary this week </h3>
+<h3 class="welcome-sub-text">Your performance summary</h3>
 @endsection
 @section('title')
     Dashboard
@@ -20,11 +19,10 @@
                         <div class="card-icon text-primary"><i class="fa-solid fa-box"></i></i></div>
                         <h4>Total Parcel</h4>
                     </div>
-
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <h4>{{$orders}}</h4>
-                            <h4>12000 BDT</h4>
+                            <h4>{{$totalamount}} BDT</h4>
                         </div>
                     </div>
                 </div>
@@ -39,7 +37,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <h4>{{$pending_orders}}</h4>
-                            <h4>3600 BDT</h4>
+                            <h4>{{$pending_amount}} BDT</h4>
                         </div>
                     </div>
                 </div>
@@ -54,7 +52,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <h4>{{$delivered_orders}}</h4>
-                            <h4>0 BDT</h4>
+                            <h4>{{$delivered_amount}} BDT</h4>
                         </div>
                     </div>
                 </div>
@@ -69,7 +67,7 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4>4</h4>
+                            <h4>0</h4>
                             <h4>0 BDT</h4>
                         </div>
                     </div>
@@ -83,8 +81,8 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4>0</h4>
-                            <h4>0 BDT</h4>
+                            <h4>{{$canceled_order}}</h4>
+                            <h4>{{$canceled_amount}} BDT</h4>
                         </div>
                     </div>
                 </div>

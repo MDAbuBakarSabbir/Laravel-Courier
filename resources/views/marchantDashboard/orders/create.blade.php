@@ -7,44 +7,61 @@
 <div class="card">
     <div class="card-body">
         <h4 class="card-title">Default form</h4>
-        <form class="forms-sample">
+        <form class="forms-sample" action="{{route('order.store')}}" method="POST">
+            @csrf
             <div class="row">
                 <div class="col-6">
                     <div class="form-group">
                       <label for="exampleInputUsername1">Customer Name</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Customer Name" name="name">
+                      <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputUsername1" placeholder="Customer Name" name="name">
                     </div>
-
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Customer Phone</label>
+                      <input type="tel" class="form-control @error('phone') is-invalid @enderror" id="exampleInputEmail1" placeholder="Customer Phone" name="phone">
+                  </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Customer Alternative Phone</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Customer Alternative Phone" name="alt-phone">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Division</label>
-                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Division" name="division">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Thana</label>
-                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Thana" name="thana">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Area</label>
-                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Area" name="area">
+                      <input type="tel" class="form-control @error('alt_phone') is-invalid @enderror" id="exampleInputEmail1" placeholder="Customer Alternative Phone" name="alt_phone">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Address</label>
-                      <textarea type="text" class="form-control" style="height: 50px;" placeholder="Address" name="address"></textarea>
+                      <textarea type="text" class="form-control @error('address') is-invalid @enderror" style="height: 50px;" placeholder="Address" name="address"></textarea>
                     </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Division</label>
+                      <input type="text" class="form-control @error('division') is-invalid @enderror" id="exampleInputPassword1" placeholder="Division" name="division">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Thana</label>
+                      <input type="text" class="form-control @error('thana') is-invalid @enderror" id="exampleInputPassword1" placeholder="Thana" name="thana">
+                    </div>
+                    {{-- <div class="form-group">
+                      <label for="exampleInputPassword1">Area</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Area" name="area">
+                    </div> --}}
+
                 </div>
                 <div class="col-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Customer Phone</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Customer Phone" name="phone">
-                    </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Actual Amount</label>
+                    <input type="number" class="form-control @error('actual_amount') is-invalid @enderror" id="exampleInputPassword1" placeholder="COD Amount" name="actual_amount">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Cash on Delivery Amount</label>
+                    <input type="number" class="form-control @error('amount') is-invalid @enderror" id="exampleInputPassword1" placeholder="COD Amount" name="amount">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Invoice</label>
+                    <input type="text" class="form-control @error('invoice') is-invalid @enderror" id="exampleInputPassword1" placeholder="Invoice (if any)" name="invoice">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Note</label>
+                    <input type="text" class="form-control @error('note') is-invalid @enderror" id="exampleInputPassword1" placeholder="Note" name="note">
+                  </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Weight</label>
                         <select class="form-control form-control-sm" data-select2-id="1" tabindex="-1" aria-hidden="true" name="weight">
-                            <option value="0.5kg" data-select2-id="3"><=500 gram</option>
+                            <option value="500g" data-select2-id="3"><=500 gram</option>
                             <option value="1kg">Weight: 500 - 1 Kg</option>
                             <option value="2kg">Weight: 1-2 kg</option>
                             <option value="3kg">Weight: 2-3 kg</option>

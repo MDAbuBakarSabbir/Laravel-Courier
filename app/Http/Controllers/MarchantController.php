@@ -11,7 +11,7 @@ class MarchantController extends Controller
      */
     public function index()
     {
-        return view('marchantDashboard.profile.profile');
+        return view('marchantDashboard.settings.profile.profile');
     }
 
     /**

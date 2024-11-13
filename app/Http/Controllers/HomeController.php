@@ -25,10 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $totalamount = CourierOrder::where('marchant_id',Auth::user()->id)->sum('cod_amount');
         $orders = CourierOrder::where('marchant_id',Auth::user()->id)->count();
-        $pending_orders = CourierOrder::where('marchant_id',Auth::user()->id && 'status','pending')->count();
-        $delivered_orders = CourierOrder::where('marchant_id',Auth::user()->id && 'status','pending')->count();
-        return view('marchantDashboard.marchant-dash-home',compact('orders','pending_orders','delivered_orders'));
+        $pending_amount = CourierOrder::where('marchant_id',Auth::user()->id)->where('status','pending')->sum('cod_amount');
+        $pending_orders = CourierOrder::where('marchant_id',Auth::user()->id)->where('status','pending')->count();
+        $delivered_amount = CourierOrder::where('marchant_id',Auth::user()->id)->where('status','delivered')->sum('cod_amount');
+        $delivered_orders = CourierOrder::where('marchant_id',Auth::user()->id)->where('status','delivered')->count();
+        $canceled_amount = CourierOrder::where('marchant_id',Auth::user()->id)->where('status','canceled')->sum('cod_amount');
+        $canceled_order = CourierOrder::where('marchant_id',Auth::user()->id)->where('status','canceled')->count();
+        return view('marchantDashboard.marchant-dash-home',compact('orders','pending_amount','pending_orders','delivered_amount','delivered_orders','totalamount','canceled_order','canceled_amount'));
     }
 
 
