@@ -16,17 +16,16 @@ class OperationController extends Controller
         $number = $request->number;
 
         $result = CourierOrder::where(function($query) use ($search){
-            $query->where('order_id','like',"%$search%")
-            ->orWhere('customer_number','like',"%$search%");
+            $query->where('order_id','like',"%$search%");
         })->get();
 
-        return view('adminDashboard.operation.orderProcess',compact('result','search','number'));
+        return view('adminDashboard.operation.orderProcess',compact('result'));
 
         $result = CourierOrder::where(function($query) use ($number){
             $query->where('customer_number','like',"%$number%");
         })->get();
 
-        return view('adminDashboard.operation.orderProcess',compact('result','number','search'));
+        return view('adminDashboard.operation.orderProcess',compact('result'));
 
     }
 }

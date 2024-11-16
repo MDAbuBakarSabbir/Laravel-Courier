@@ -32,7 +32,7 @@ Route::resource('/admin',AdminController::class);
 Route::get('/admin',[AdminController::class,'login_view'])->name('admin-login');
 Route::post('/admin',[AdminController::class,'login'])->name('admin-login');
 
-Route::middleware('rolecheck')->group(function(){
+// Route::middleware('rolecheck')->group(function(){
 
 // Operation
 
@@ -52,7 +52,7 @@ Route::get('/manage/show-deliveryMan',[ManagementController::class,'show_deliver
 
 Route::get('/manage/marchant-info',[ManagementController::class,'marchant_info'])->name('show.marchant_info');
 
-});
+// });
 
 
 // Marchant Register Login

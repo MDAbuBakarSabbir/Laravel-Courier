@@ -29,18 +29,27 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Division</label>
-                      <input type="text" class="form-control @error('division') is-invalid @enderror" id="exampleInputPassword1" placeholder="Division" name="division">
+                      <select class="form-select" aria-label="Default select example" name="division">
+                        <option selected>Select Division</option>
+                        <option value="1">One</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">District</label>
+                      <select class="form-select" aria-label="Default select example" name="district">
+                        <option selected>Select District</option>
+                        <option value="1">One</option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Thana</label>
-                      <input type="text" class="form-control @error('thana') is-invalid @enderror" id="exampleInputPassword1" placeholder="Thana" name="thana">
+                      <select class="form-select" aria-label="Default select example" name="thana">
+                        <option selected>Select Thana</option>
+                        <option value="1">One</option>
+                      </select>
                     </div>
-                    {{-- <div class="form-group">
-                      <label for="exampleInputPassword1">Area</label>
-                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Area" name="area">
-                    </div> --}}
-
                 </div>
+
                 <div class="col-6">
                   <div class="form-group">
                     <label for="exampleInputPassword1">Actual Amount</label>

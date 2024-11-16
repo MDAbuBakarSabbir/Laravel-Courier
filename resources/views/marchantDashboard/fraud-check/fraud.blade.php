@@ -10,7 +10,7 @@
                 <div class="inner-page-search-box d-flex gap-4 mb-4">
                     <div class="input-group mb-3" style="margin: 15px 500px">
                         <input type="search" class="form-control form-control-lg" placeholder="Search by phone number">
-                        <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass h-auto w-auto ml-5"></i>Search</button>
+                        <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass h-auto w-auto mr-2"></i>Search</button>
                     </div>
                     </div>
                     <div class="d-flex justify-content-center align-items-center flex-column gap-4 mt-5">

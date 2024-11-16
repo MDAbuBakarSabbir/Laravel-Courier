@@ -71,7 +71,7 @@
                     <h6>Order Details</h6>
                 </div>
                 <div class="card-body">
-                    <h3>{{$result}},{{$search}},{{$number}} </h3>
+                    <h3>{{$result}}</h3>
                 </div>
             </div>
         </div>

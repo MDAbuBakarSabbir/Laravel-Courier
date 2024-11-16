@@ -13,62 +13,68 @@ class CourierOrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $orders = CourierOrder::where('marchant_id',Auth::user()->id)->latest()->get();
+
+        // $orders = CourierOrder::where('marchant_id',Auth::user()->id)
+        // ->when($request->status != null, function($query) use ($request){
+        //   return $query->where('status',$request->status);
+        // })
+        // ->latest()->get();
 
         return view('marchantDashboard.orders.index',compact('orders'));
     }
 
-    public function search(Request $request){
-        if($request->ajax()){
+//     public function search(Request $request){
+//         if($request->ajax()){
 
-            $data=CourierOrder::where('id','like','%'.$request->search.'%')
-            ->orwhere('customer_name','like','%'.$request->search.'%')
-            ->orwhere('customer_number','like','%'.$request->search.'%')->get();
-
-
-            $output='';
-        if(count($data)>0){
-
-             $output ='
-                <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                </tr>
-                </thead>
-                <tbody>';
-
-                    foreach($data as $row){
-                        $output .='
-                        <tr>
-                        <th scope="row">'.$row->id.'</th>
-                        <td>'.$row->customer_name.'</td>
-                        <td>'.$row->customer_number.'</td>
-                        </tr>
-                        ';
-                    }
+//             $data=CourierOrder::where('id','like','%'.$request->search.'%')
+//             ->orwhere('customer_name','like','%'.$request->search.'%')
+//             ->orwhere('customer_number','like','%'.$request->search.'%')->get();
 
 
+//             $output='';
+//         if(count($data)>0){
 
-             $output .= '
-                 </tbody>
-                </table>';
+//              $output ='
+//                 <table class="table">
+//                 <thead>
+//                 <tr>
+//                     <th scope="col">#</th>
+//                     <th scope="col">Title</th>
+//                     <th scope="col">Description</th>
+//                 </tr>
+//                 </thead>
+//                 <tbody>';
+
+//                     foreach($data as $row){
+//                         $output .='
+//                         <tr>
+//                         <th scope="row">'.$row->id.'</th>
+//                         <td>'.$row->customer_name.'</td>
+//                         <td>'.$row->customer_number.'</td>
+//                         </tr>
+//                         ';
+//                     }
 
 
 
-        }
-        else{
+//              $output .= '
+//                  </tbody>
+//                 </table>';
 
-            $output .='No results';
 
-        }
-        return $output;
-    }
-}
+
+//         }
+//         else{
+
+//             $output .='No results';
+
+//         }
+//         return $output;
+//     }
+// }
     // public function search(Request $request){
     //     $output = " ";
     //     $orders = CourierOrder::where('id','Like','%'.$request->search.'%')->get();

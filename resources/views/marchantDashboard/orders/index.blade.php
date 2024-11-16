@@ -13,6 +13,18 @@
                         <input type="text" id="search" name="search" class="form-control" style="height: 40px;" placeholder="Search Order Here">
                         <button class="btn btn-primary" type="submit" style="height: 40px;">Search</button>
                     </div>
+                    <div class="input-group w-25 p-3 mt-0 pt-0 mb-0 pb-0">
+                        <form class="d-flex" action="" method="GET">
+                            <select class="custom-select" id="inlineFormCustomSelectPref" style="height: 38px" name="status">
+                              <option selected>All Orders</option>
+                              <option value="pending" >Pending Order</option>
+                              <option value="canceled">Canceled Order</option>
+                              <option value="partital">Partial Order</option>
+                              <option value="delivered">Delivered Order</option>
+                            </select>
+                            <button class="btn btn-primary" type="submit" style="height: 38px;">Sort</button>
+                        </form>
+                    </div>
                     <a class="btn btn-primary h-25" href="{{route('order.create')}}"><i class="fa-solid fa-plus"></i> Add</a>
                 </div>
                 <div class="card-body">
