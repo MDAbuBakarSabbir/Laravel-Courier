@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -24,10 +26,25 @@ class AdminController extends Controller
     {
 
     }
+    public function login_view()
+    {
+        return view('auth.admin.login');
+    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password'=> 'required',
+        ]);
+        if(Auth::attempt($request->only('email','password'))){
+            return view('home');
+        }else{
+            return view('welcome');
+        }
+    }
+
+
     public function store(StoreAdminRequest $request)
     {
         return Admin::create([

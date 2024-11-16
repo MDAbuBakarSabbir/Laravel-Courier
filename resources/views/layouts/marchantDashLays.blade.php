@@ -112,7 +112,7 @@
                 <img class="img-md rounded-circle" src="{{asset('marchantDash/images/profile')}}/{{Auth::user()->image}}" alt="Profile image">
               </div>
               <a href="{{route('marchant.index')}}" class="dropdown-item"><i class="dropdown-item-icon fa-solid fa-user text-primary me-2"></i> My Profile</a>
-              <a href="{{route('marchant.index')}}" class="dropdown-item"><i class="dropdown-item-icon fa-solid fa-lock text-primary me-2"></i> Password</a>
+              <a href="{{route('marchant.password')}}" class="dropdown-item"><i class="dropdown-item-icon fa-solid fa-lock text-primary me-2"></i> Password</a>
               <form action="{{route('logout')}}" method="POST">
                 @csrf
                 <button type="submit" class="dropdown-item"><i class="dropdown-item-icon fa-solid fa-power-off text-primary me-2"></i>LogOut</button>
@@ -321,49 +321,49 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('bulk-order')}}">
                 <i class="menu-icon fa-solid fa-boxes-stacked"></i>
               <span class="menu-title">Bulk Order</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('order-track')}}">
                 <i class="menu-icon fa-solid fa-map-location-dot"></i>
               <span class="menu-title">Order Tracking</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('fraud-check')}}">
                 <i class="menu-icon fa-solid fa-user-ninja"></i>
               <span class="menu-title">Fraud check</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('pricing')}}">
                 <i class="menu-icon fa-solid fa-wallet"></i>
               <span class="menu-title">Pricing</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('payment-history')}}">
                 <i class="menu-icon fa-solid fa-file-invoice-dollar"></i>
               <span class="menu-title">Payment History</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('complain')}}">
                 <i class="menu-icon fa-solid fa-user-shield"></i>
               <span class="menu-title">Complain</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('feedback')}}">
                 <i class="menu-icon fa-solid fa-star"></i>
               <span class="menu-title">Feedback</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('api')}}">
                 <i class="menu-icon fa-solid fa-share-nodes"></i>
               <span class="menu-title">API</span>
             </a>
@@ -379,7 +379,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{route('marchant.index')}}">Profile</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="">Password</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('marchant.password')}}">Password</a></li>
               </ul>
             </div>
           </li>
@@ -421,6 +421,7 @@
   <script src="{{asset('marchantDash')}}/js/todolist.js"></script>
   <script src="{{asset('marchantDash')}}/js/dashboard.js"></script>
   <script src="{{asset('marchantDash')}}/js/Chart.roundedBarCharts.js"></script>
+  @yield('script')
 
 </body>
 

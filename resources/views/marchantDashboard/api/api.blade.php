@@ -1,7 +1,7 @@
 @extends('layouts.marchantDashLays')
 
 @section('title')
-    Bulk Order
+    API
 @endsection
 
 @section('content')

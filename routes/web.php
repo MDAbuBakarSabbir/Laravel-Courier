@@ -6,7 +6,6 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\MarchantController;
 use App\Http\Controllers\OperationController;
-use App\Http\Controllers\OrderProcessController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,13 +27,12 @@ Route::get('/parcel-tracking',[FrontendController::class,'tracking'])->name('fro
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-
+ // Admin Dashboard start
+Route::resource('/admin',AdminController::class);
+Route::get('/admin',[AdminController::class,'login_view'])->name('admin-login');
+Route::post('/admin',[AdminController::class,'login'])->name('admin-login');
 
 Route::middleware('rolecheck')->group(function(){
-    // Admin Dashboard start
-
-Route::resource('/admin',AdminController::class);
 
 // Operation
 
@@ -68,10 +66,26 @@ Route::post('/marchat-register_store',[FrontendController::class,'register_store
 
 
 // Marchant Dashboard
+Route::get('/order-pricing',[MarchantController::class,'pricing'])->name('pricing');
 
 Route::resource('/marchant',MarchantController::class);
+Route::get('/payment-history',[MarchantController::class,'payhistory'])->name('payment-history');
+
+Route::get('/complain',[MarchantController::class,'complain'])->name('complain');
+Route::post('/complain-store',[MarchantController::class,'complain_store'])->name('complain-store');
+
+Route::get('/feedback',[MarchantController::class,'feedback'])->name('feedback');
+Route::get('/feedback-store',[MarchantController::class,'feedback_store'])->name('feedback-store');
+
+Route::get('/api',[MarchantController::class,'api'])->name('api');
+Route::get('/password',[MarchantController::class,'password'])->name('marchant.password');
 
 
 // Courier orders
 
 Route::resource('/order',CourierOrderController::class);
+Route::get('/search',[CourierOrderController::class,'search']);
+Route::get('/bulk-order',[CourierOrderController::class,'bulk_order'])->name('bulk-order');
+Route::get('/order-track',[CourierOrderController::class,'order_track'])->name('order-track');
+
+Route::get('/fraud-check',[CourierOrderController::class,'fraud_check'])->name('fraud-check');

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('invoice')->nullable();
             $table->string('note')->nullable();
             $table->string('weight')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

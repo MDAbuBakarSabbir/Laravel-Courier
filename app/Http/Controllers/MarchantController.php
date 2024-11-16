@@ -45,10 +45,12 @@ class MarchantController extends Controller
     {
         //
     }
+    public function password(Request $request)
+    {
+        return view('marchantDashboard.settings.password.password');
+    }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, string $id)
     {
         //
@@ -61,4 +63,43 @@ class MarchantController extends Controller
     {
         //
     }
+
+    public function payhistory()
+    {
+        return view('marchantDashboard.payments.payhistory');
+    }
+    public function complain()
+    {
+return view('marchantDashboard.complain.complain');
+    }
+    public function complain_store(Request $request)
+    {
+
+    }
+
+
+    public function feedback()
+    {
+        return view('marchantDashboard.feedback.feedback');
+    }
+
+    public function feedback_store(Request $request)
+    {
+        //
+    }
+
+
+    public function api()
+    {
+        return view('marchantDashboard.api.api');
+    }
+
+
+    public function pricing()
+    {
+        return view('marchantDashboard.pricing.pricing');
+    }
+
+
+
 }

@@ -21,7 +21,7 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4>{{$orders}}</h4>
+                            <a href="{{route('order.index')}}" class="text-decoration-none text-dark">{{$orders}}</a>
                             <h4>{{$totalamount}} BDT</h4>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
 
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4>{{$pending_orders}}</h4>
+                            <a href="" class="text-decoration-none text-dark">{{$pending_orders}}</a>
                             <h4>{{$pending_amount}} BDT</h4>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
 
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4>{{$delivered_orders}}</h4>
+                            <a href="" class="text-decoration-none text-dark">{{$delivered_orders}}</a>
                             <h4>{{$delivered_amount}} BDT</h4>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4>0</h4>
+                            <a href="" class="text-decoration-none text-dark">0</a>
                             <h4>0 BDT</h4>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4>{{$canceled_order}}</h4>
+                            <a href="#" class="text-decoration-none text-dark">{{$canceled_order}}</a>
                             <h4>{{$canceled_amount}} BDT</h4>
                         </div>
                     </div>
@@ -108,21 +108,21 @@
     <div class="card-body">
         <div class="row">
             <div class="col-lg-2">
-                <a href="{{route('order.create')}}">
+                <a href="{{route('order.create')}}" class="text-decoration-none">
                     <div class="card">
-                        <div class="card-body" style="text-align: center; text-decoration:none">
-                            <h3>Add Parcel</h3>
+                        <div class="card-body addparcel" style="text-align: center;">
                             <i class="fa-solid fa-plus"></i>
+                            <h3>Add Parcel</h3>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-2">
-                <a href="{{route('order.create')}}">
+                <a href="{{route('order.index')}}" class="text-decoration-none">
                     <div class="card">
                         <div class="card-body" style="text-align: center; text-decoration:none">
-                            <h3>All Parcel</h3>
                             <i class="fa-solid fa-plus"></i>
+                            <h3>All Parcel</h3>
                         </div>
                     </div>
                 </a>
