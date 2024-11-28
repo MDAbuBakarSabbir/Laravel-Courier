@@ -6,6 +6,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\MarchantController;
 use App\Http\Controllers\OperationController;
+use App\Http\Controllers\RiderController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -53,6 +54,27 @@ Route::get('/manage/show-deliveryMan',[ManagementController::class,'show_deliver
 Route::get('/manage/marchant-info',[ManagementController::class,'marchant_info'])->name('show.marchant_info');
 
 // });
+
+
+
+
+
+// Rider
+
+Route::resource('/rider',RiderController::class);
+Route::get('/rider-home',[RiderController::class,'home'])->name('rider-home');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Marchant Register Login
